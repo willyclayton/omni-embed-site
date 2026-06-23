@@ -1,6 +1,5 @@
 {
-  "name": "mlb-embed-site",
-  "description": "MLB Stats Portal with Omni embed; API generates fresh signed URLs.",
+  "name": "mlb-embed",
   "version": "1.0.0",
   "private": true,
   "engines": { "node": ">=18" },
