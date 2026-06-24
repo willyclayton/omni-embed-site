@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
 
   const externalId = (req.query && req.query.externalId) || process.env.OMNI_EXTERNAL_ID || 'mlb_user';
   const name      = (req.query && req.query.name)       || process.env.OMNI_NAME          || 'MLB Fan';
-  const team      = (req.query && req.query.team)       || null;
+  const team      = (req.query && req.query.team)       || 'Atlanta Braves';
 
   try {
     const opts = {
