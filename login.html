@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select team | MLB Stats Portal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+
+  <header class="app-bar">
+    <a href="./" class="app-bar__logo">
+      <svg class="app-bar__logo-icon" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="13" cy="13" r="12" fill="white" stroke="#bf0d3e" stroke-width="1.5"/>
+        <path d="M5.5 9.5 Q9 13 5.5 16.5" stroke="#bf0d3e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M20.5 9.5 Q17 13 20.5 16.5" stroke="#bf0d3e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span>MLB Stats Portal</span>
+    </a>
+    <a href="index.html" class="app-bar__switch">Dashboard</a>
+  </header>
+
+  <main class="login-main">
+    <section class="login-card">
+      <h1>Select your team</h1>
+      <p class="login-desc">
+        Choose an MLB team to view its stats and analytics on the dashboard.
+      </p>
+      <form id="login-form" class="login-form">
+        <label for="team-select" class="login-label">MLB team</label>
+        <select id="team-select" class="login-select" required>
+          <option value="" disabled selected>Select a team</option>
+          <optgroup label="AL East">
+            <option value="Baltimore Orioles">Baltimore Orioles</option>
+            <option value="Boston Red Sox">Boston Red Sox</option>
+            <option value="New York Yankees">New York Yankees</option>
+            <option value="Tampa Bay Rays">Tampa Bay Rays</option>
+            <option value="Toronto Blue Jays">Toronto Blue Jays</option>
+          </optgroup>
+          <optgroup label="AL Central">
+            <option value="Chicago White Sox">Chicago White Sox</option>
+            <option value="Cleveland Guardians">Cleveland Guardians</option>
+            <option value="Detroit Tigers">Detroit Tigers</option>
+            <option value="Kansas City Royals">Kansas City Royals</option>
+            <option value="Minnesota Twins">Minnesota Twins</option>
+          </optgroup>
+          <optgroup label="AL West">
+            <option value="Houston Astros">Houston Astros</option>
+            <option value="Los Angeles Angels">Los Angeles Angels</option>
+            <option value="Athletics">Athletics</option>
+            <option value="Seattle Mariners">Seattle Mariners</option>
+            <option value="Texas Rangers">Texas Rangers</option>
+          </optgroup>
+          <optgroup label="NL East">
+            <option value="Atlanta Braves">Atlanta Braves</option>
+            <option value="Miami Marlins">Miami Marlins</option>
+            <option value="New York Mets">New York Mets</option>
+            <option value="Philadelphia Phillies">Philadelphia Phillies</option>
+            <option value="Washington Nationals">Washington Nationals</option>
+          </optgroup>
+          <optgroup label="NL Central">
+            <option value="Chicago Cubs">Chicago Cubs</option>
+            <option value="Cincinnati Reds">Cincinnati Reds</option>
+            <option value="Milwaukee Brewers">Milwaukee Brewers</option>
+            <option value="Pittsburgh Pirates">Pittsburgh Pirates</option>
+            <option value="St. Louis Cardinals">St. Louis Cardinals</option>
+          </optgroup>
+          <optgroup label="NL West">
+            <option value="Arizona Diamondbacks">Arizona Diamondbacks</option>
+            <option value="Colorado Rockies">Colorado Rockies</option>
+            <option value="Los Angeles Dodgers">Los Angeles Dodgers</option>
+            <option value="San Diego Padres">San Diego Padres</option>
+            <option value="San Francisco Giants">San Francisco Giants</option>
+          </optgroup>
+        </select>
+        <button type="submit" class="btn btn-primary">View dashboard</button>
+      </form>
+      <p class="login-note">The dashboard will filter to show your selected team&rsquo;s data.</p>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var select = document.getElementById('team-select');
+      var name = select.value;
+      if (name) {
+        try {
+          sessionStorage.setItem('demoUser', JSON.stringify({
+            externalId: name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+            name: name
+          }));
+        } catch (err) {}
+        window.location.href = 'index.html';
+      }
+    });
+  </script>
+</body>
+</html>
