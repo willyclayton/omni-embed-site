@@ -11,6 +11,9 @@ const TEAM_THEMES = {
 /** Team logo image URLs for dashboard Markdown tiles. */
 const TEAM_LOGOS = {
   'Atlanta Braves': 'https://1000logos.net/wp-content/uploads/2017/08/Atlanta-Braves-logo.jpg',
+  'Miami Marlins': 'https://1000logos.net/wp-content/uploads/2017/04/Miami-Marlins-logo.jpg',
+  'New York Mets': 'https://1000logos.net/wp-content/uploads/2017/07/New-York-Mets-logo.jpg',
+  'Philadelphia Phillies': 'https://1000logos.net/wp-content/uploads/2017/05/Philadelphia-Phillies-logo.jpg',
 };
 
 module.exports = async (req, res) => {
