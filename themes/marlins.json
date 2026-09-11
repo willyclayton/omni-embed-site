@@ -1,0 +1,15 @@
+{
+  "dashboard-background": "#F3F8FC",
+  "dashboard-tile-background": "#FFFFFF",
+  "dashboard-tile-border-color": "#D3E4F0",
+  "dashboard-tile-border-radius": "8px",
+  "dashboard-tile-title-text-color": "#0C2340",
+  "dashboard-tile-text-body-color": "#0C2340",
+  "dashboard-tile-text-secondary-color": "#5B7388",
+  "dashboard-control-background": "#FFFFFF",
+  "dashboard-control-border-color": "#B9D3E4",
+  "dashboard-control-text-color": "#0C2340",
+  "dashboard-control-label-color": "#0C2340",
+  "dashboard-key-color": "#00A3E0",
+  "dashboard-key-text-color": "#FFFFFF"
+}

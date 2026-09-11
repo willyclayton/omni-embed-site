@@ -1,8 +1,11 @@
 const { embedSsoDashboard } = require('@omni-co/embed');
 
-/** Omni document theme IDs keyed by MLB team name. */
+/** Omni customTheme JSON keyed by MLB team name. */
 const TEAM_THEMES = {
-  'Atlanta Braves': 'df108aa9-6716-4fdc-8c8f-109e86f0eba6',
+  'Atlanta Braves': require('../themes/braves.json'),
+  'Miami Marlins': require('../themes/marlins.json'),
+  'New York Mets': require('../themes/mets.json'),
+  'Philadelphia Phillies': require('../themes/phillies.json'),
 };
 
 module.exports = async (req, res) => {
@@ -33,8 +36,8 @@ module.exports = async (req, res) => {
 
     if (team) opts.userAttributes = { Team: team };
 
-    const themeId = TEAM_THEMES[team];
-    if (themeId) opts.customThemeId = themeId;
+    const theme = TEAM_THEMES[team];
+    if (theme) opts.customTheme = theme;
 
     const iframeUrl = await embedSsoDashboard(opts);
     return res.status(200).json({ url: iframeUrl });
