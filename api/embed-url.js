@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
   try {
     const opts = {
       host:        process.env.OMNI_HOST,
-      contentId:   process.env.OMNI_CONTENT_ID || '50cf9808',
+      contentId:   process.env.OMNI_CONTENT_ID || '6d9b5153',
       externalId,
       name,
       secret,
