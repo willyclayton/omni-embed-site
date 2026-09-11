@@ -24,6 +24,14 @@ const TEAM_BALLPARKS = {
   'Philadelphia Phillies': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Citizens_Bank_Park_-_Wide_View.jpg/1280px-Citizens_Bank_Park_-_Wide_View.jpg',
 };
 
+/** Official MLB team page URLs for clickable logo Markdown tiles. */
+const TEAM_MLB_PAGES = {
+  'Atlanta Braves': 'https://www.mlb.com/braves',
+  'Miami Marlins': 'https://www.mlb.com/marlins',
+  'New York Mets': 'https://www.mlb.com/mets',
+  'Philadelphia Phillies': 'https://www.mlb.com/phillies',
+};
+
 module.exports = async (req, res) => {
   const origin = req.headers.origin || req.headers.referer || '';
   const allowed = origin.includes('localhost') || origin.includes('127.0.0.1') || origin.includes('vercel.app');
@@ -56,6 +64,8 @@ module.exports = async (req, res) => {
       if (logoUrl) opts.userAttributes.logo_url = logoUrl;
       const ballparkUrl = TEAM_BALLPARKS[team];
       if (ballparkUrl) opts.userAttributes.ballpark_photo = ballparkUrl;
+      const mlbPage = TEAM_MLB_PAGES[team];
+      if (mlbPage) opts.userAttributes.mlb_page = mlbPage;
     }
 
     const themeId = TEAM_THEMES[team];
