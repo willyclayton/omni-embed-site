@@ -1,15 +1,18 @@
 {
-  "dashboard-background": "#F4F6F9",
+  "dashboard-background": "linear-gradient(160deg, #13274F 0%, #1B3A6B 45%, #CE1141 100%)",
+  "dashboard-page-padding": "20px",
   "dashboard-tile-background": "#FFFFFF",
-  "dashboard-tile-border-color": "#D8DEE8",
-  "dashboard-tile-border-radius": "8px",
+  "dashboard-tile-border-color": "#CE1141",
+  "dashboard-tile-border-width": "2px",
+  "dashboard-tile-border-radius": "10px",
+  "dashboard-tile-shadow": "0 8px 24px rgba(19, 39, 79, 0.28)",
   "dashboard-tile-title-text-color": "#13274F",
   "dashboard-tile-text-body-color": "#13274F",
   "dashboard-tile-text-secondary-color": "#5A6B82",
   "dashboard-control-background": "#FFFFFF",
-  "dashboard-control-border-color": "#C5CEDC",
+  "dashboard-control-border-color": "#CE1141",
   "dashboard-control-text-color": "#13274F",
-  "dashboard-control-label-color": "#13274F",
+  "dashboard-control-label-color": "#FFFFFF",
   "dashboard-key-color": "#CE1141",
   "dashboard-key-text-color": "#FFFFFF"
 }
