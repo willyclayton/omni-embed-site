@@ -2,7 +2,10 @@ const { embedSsoDashboard } = require('@omni-co/embed');
 
 /** Omni document theme IDs keyed by MLB team name. */
 const TEAM_THEMES = {
-  'Atlanta Braves': 'df108aa9-6716-4fdc-8c8f-109e86f0eba6',
+  'Atlanta Braves': '356ac4f3-ca63-48f0-94e2-38526aaac514',
+  'Miami Marlins': '6a9972af-056e-4536-baef-6a6009e7aa60',
+  'New York Mets': 'dfa097e3-f5af-4d9d-87c7-37f0af9aab3c',
+  'Philadelphia Phillies': '3f08bc04-4317-46ff-aa31-997acc2ea431',
 };
 
 module.exports = async (req, res) => {
