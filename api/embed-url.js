@@ -32,6 +32,11 @@ const TEAM_MLB_PAGES = {
   'Philadelphia Phillies': 'https://www.mlb.com/phillies',
 };
 
+/** Omni connection ID → role for embed sessions. */
+const CONNECTION_ROLES = {
+  '09460e24-8b19-4d8e-9613-00cee1baf70c': 'RESTRICTED_QUERIER',
+};
+
 module.exports = async (req, res) => {
   const origin = req.headers.origin || req.headers.referer || '';
   const allowed = origin.includes('localhost') || origin.includes('127.0.0.1') || origin.includes('vercel.app');
@@ -56,6 +61,7 @@ module.exports = async (req, res) => {
       name,
       secret,
       accessBoost: process.env.OMNI_ACCESS_BOOST !== 'false',
+      connectionRoles: CONNECTION_ROLES,
     };
 
     if (team) {
