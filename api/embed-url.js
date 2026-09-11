@@ -8,6 +8,11 @@ const TEAM_THEMES = {
   'Philadelphia Phillies': '3f08bc04-4317-46ff-aa31-997acc2ea431',
 };
 
+/** Team logo image URLs for dashboard Markdown tiles. */
+const TEAM_LOGOS = {
+  'Atlanta Braves': 'https://1000logos.net/wp-content/uploads/2017/08/Atlanta-Braves-logo.jpg',
+};
+
 module.exports = async (req, res) => {
   const origin = req.headers.origin || req.headers.referer || '';
   const allowed = origin.includes('localhost') || origin.includes('127.0.0.1') || origin.includes('vercel.app');
@@ -34,7 +39,11 @@ module.exports = async (req, res) => {
       accessBoost: process.env.OMNI_ACCESS_BOOST !== 'false',
     };
 
-    if (team) opts.userAttributes = { Team: team };
+    if (team) {
+      opts.userAttributes = { Team: team };
+      const logoUrl = TEAM_LOGOS[team];
+      if (logoUrl) opts.userAttributes.logo_url = logoUrl;
+    }
 
     const themeId = TEAM_THEMES[team];
     if (themeId) opts.customThemeId = themeId;
