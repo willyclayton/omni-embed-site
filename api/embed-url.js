@@ -16,6 +16,14 @@ const TEAM_LOGOS = {
   'Philadelphia Phillies': 'https://1000logos.net/wp-content/uploads/2017/05/Philadelphia-Phillies-logo.jpg',
 };
 
+/** Ballpark photo URLs (Wikimedia Commons) for dashboard Markdown tiles. */
+const TEAM_BALLPARKS = {
+  'Atlanta Braves': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Truist_Park.jpg/1280px-Truist_Park.jpg',
+  'Miami Marlins': 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/LoanDepot_Park.jpg/1280px-LoanDepot_Park.jpg',
+  'New York Mets': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Citi_Field_main_entrance.jpg/1280px-Citi_Field_main_entrance.jpg',
+  'Philadelphia Phillies': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Citizens_Bank_Park_-_Wide_View.jpg/1280px-Citizens_Bank_Park_-_Wide_View.jpg',
+};
+
 module.exports = async (req, res) => {
   const origin = req.headers.origin || req.headers.referer || '';
   const allowed = origin.includes('localhost') || origin.includes('127.0.0.1') || origin.includes('vercel.app');
@@ -46,6 +54,8 @@ module.exports = async (req, res) => {
       opts.userAttributes = { Team: team };
       const logoUrl = TEAM_LOGOS[team];
       if (logoUrl) opts.userAttributes.logo_url = logoUrl;
+      const ballparkUrl = TEAM_BALLPARKS[team];
+      if (ballparkUrl) opts.userAttributes.ballpark_photo = ballparkUrl;
     }
 
     const themeId = TEAM_THEMES[team];
